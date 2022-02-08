@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'HawtWheelzWebApp.apps.HawtwheelzwebappConfig',
+    'wheelz.apps.WheelzConfig',
 ]
 
 MIDDLEWARE = [

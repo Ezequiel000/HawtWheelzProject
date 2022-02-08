@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class HawtwheelzwebappConfig(AppConfig):
+class WheelzConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'HawtWheelzWebApp'
+    name = 'wheelz'
