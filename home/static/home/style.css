@@ -1,0 +1,91 @@
+
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: black;
+    /* background-color: #2f3035;           */
+    background-image: url(images/pexels-photo-919073.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1024px;
+}
+
+
+header {
+    /* background-color: blue; */
+    height:118px;  /*laptops are 1300,another common size 992,960*/
+    text-align: center;
+}
+
+nav {
+    background-color: rgba(255, 255, 255, 0.116);
+    /* height: 40px; */
+    padding-top: 14px;
+    padding-bottom: 14px;
+    text-align: center;
+}
+
+main {
+    /* background-color: orange;   used for creating a frame but can delete after*/
+    height: 400px;
+    text-align: center;
+    padding-top: 80px;      /*Padding places margin for the text rather than the entire frame*/
+    padding-left: 240px;
+    padding-right: 240px;
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0.055);
+    /* height: 50px; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+h1 {
+    font-size: 84px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-size: 18px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    /* text-decoration: none; */
+
+}
+
+nav a {
+     /* this is basically an if then for a tags. if a tag in nav then do this */
+    text-decoration: none;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+footer p {
+    font-size: 12px;
+    text-align: center;
+    color: white;
+}
+
+.vids {
+
+    text-align: center;
+}
