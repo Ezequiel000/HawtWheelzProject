@@ -9,6 +9,8 @@ class Car(models.Model):
     name = models.CharField(max_length=200)
            # Images require Pillow 9.0
     product_image = models.ImageField
+    price = models.IntegerField
+
 
     # Methods
     def __str__(self):
