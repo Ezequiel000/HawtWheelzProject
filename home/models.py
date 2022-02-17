@@ -4,13 +4,13 @@ from PIL import Image
 
 # Create your models here.
 
+
 class Car(models.Model):
     # Fields
     name = models.CharField(max_length=200)
-           # Images require Pillow 9.0
-    product_image = models.ImageField
-    price = models.IntegerField
-
+    # Images require Pillow 9.0
+    product_image = models.ImageField(upload_to='cars')
+    price = models.IntegerField()
 
     # Methods
     def __str__(self):
