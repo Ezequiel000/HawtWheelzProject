@@ -12,6 +12,10 @@ class Car(models.Model):
     product_image = models.ImageField(upload_to='cars')
     price = models.IntegerField()
 
+    # date added, for new vehicle selection
+
+    # new or used
+
     # Methods
     def __str__(self):
         return self.name
