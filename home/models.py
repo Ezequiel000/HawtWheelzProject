@@ -12,6 +12,8 @@ class Car(models.Model):
     product_image = models.ImageField(upload_to='cars')
     price = models.IntegerField()
 
+    # old or used
+
     # Methods
     def __str__(self):
         return self.name
