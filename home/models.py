@@ -1,32 +1,23 @@
 from django.db import models
 
 
-# change made
-# Create your models here.
-# git test
-
 class Car(models.Model):
     # Fields
-    name = models.CharField(max_length=200)
-    make = models.CharField(max_length=200)
+    name = models.CharField(max_length=20, default='Name')
+    make = models.CharField(max_length=20, default='Make')
 
-    model = models.CharField(max_length=200)
+    model = models.CharField(max_length=20, default='Model')
     # Images require Pillow 9.0
-    product_image = models.ImageField(upload_to='cars')
-    price = models.IntegerField()
+    product_image = models.ImageField(upload_to='cars', default='car.jpeg')
+    price = models.IntegerField(default=0)
 
-    # date added, for new vehicle selection
-
-    # new or used
-
-    # Methods
     def __str__(self):
         return self.name
 
 
 class NavBar(models.Model):
     # Fields
-    option_text = models.CharField(max_length=200)
+    option_text = models.CharField(max_length=20, default='Text')
 
     # Methods
     def __str__(self):
