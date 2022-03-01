@@ -5,12 +5,9 @@ html {
 }
 
 body {
-    background-color: black;
     /* background-color: #2f3035;           */
-    background-image: url(images/pexels-photo-919073.jpeg);
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    /*background: url("images/tesla.jpg") no-repeat;*/
 
 }
 
