@@ -1,0 +1,116 @@
+html {
+    height: 100%;
+}
+/*Classes*/
+.box1 {
+    background-color: #a4a4a4;
+
+}
+body {
+    background-color: #ffffff;
+    /* background-color: #2f3035;           */
+   /*background-image: url(images/pexels-photo-919073.jpeg);*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1224px;
+}
+
+
+header {
+    background-color: rgba(255, 255, 255, 0.76);
+    height:125px;  /*laptops are 1300,another common size 992,960*/
+    text-align:center;
+    font-size: 84px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    background-color: rgba(79, 79, 79, 0.93);
+    /* height: 40px; */
+    padding-top: 14px;
+    padding-bottom: 14px;
+    text-align: center;
+}
+
+main {
+    /* background-color: orange;   used for creating a frame but can delete after*/
+    height: 400px;
+    text-align: center;
+    padding-top: 80px;      /*Padding places margin for the text rather than the entire frame*/
+    padding-left: 240px;
+    padding-right: 240px;
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0.055);
+    /* height: 50px; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+h3 {
+    font-size: 40px;
+    font-style: italic;
+    font-weight: bold;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 84px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+    font-size: 84px;
+    font-style: italic;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+p {
+    font-size: 18px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    /* text-decoration: none; */
+
+}
+
+nav a {
+     /* this is basically an if then for a tags. if a tag in nav then do this */
+    text-decoration: none;
+    font-size: 13px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+footer p {
+    font-size: 12px;
+    text-align: center;
+    color: #000000;
+}
+
+
+.vids {
+
+    text-align: center;
+}
+
+/* .no-underline { */
+    /* text-decoration: none; then in */
+/* } */
