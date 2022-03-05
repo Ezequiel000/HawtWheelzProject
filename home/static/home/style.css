@@ -1,3 +1,4 @@
+
 html {
     height: 100%;
 }
@@ -9,7 +10,7 @@ html {
 body {
     background-color: #ffffff;
     /* background-color: #2f3035;           */
-   /*background-image: url(images/pexels-photo-919073.jpeg);*/
+
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -42,6 +43,8 @@ nav {
 
 main {
     /* background-color: orange;   used for creating a frame but can delete after*/
+    background-image: url("images/tesla-home-background.jpg");
+    background-size: cover;
     height: 400px;
     text-align: center;
     padding-top: 80px;      /*Padding places margin for the text rather than the entire frame*/
