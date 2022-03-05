@@ -1,19 +1,30 @@
 {% load static %}
 <!DOCTYPE html>
+<!--establish language used is english#-->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hawt Wheelz</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
-</head>
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <!--Browser title tag (50 char;tells what's on page)-->
+        <title>HawtWheelz</title>
+
+       <!-- Meta description changes from page to page(used by search engines to describe content)
+//       <meta name="description" content="This is a description of the content on page (120 char)">-->
+        <link rel="stylesheet" href="../../home/static/home/style.css"/>
+
+    </head>
+
 <body>                  <!--t-->
 
     <div class= "container" >
         <header>
 
-        </header>
+            <img src="../../home/static/home/images/logo%201.4.svg" alt="Logo "
+                 style="width: 720px;height: 120px;">
 
+
+        </header>
         <nav>
             <a href="#">HOME</a>
             <a href="#">SHOP</a>
@@ -26,17 +37,19 @@
 
         <main>
 
-            <h1>Hawt Wheelz!</h1>
-            <p>Top Quality parts Reinforced by the <a href="#">Devil</a> Himself.</p>
+            <h1>Hawt Wheelz</h1>
+            <p>The dealership with <a href="#">Hawt</a> Prices.</p>
 
             <!-- <a href="https://www.google.com" target="_blank">Enter Hell!</a>  targetblank, opens link newtab when link is clicked -->
-            <a href="mailto:giovan.gonzales@aol.com?Subject=Inquiry">Enter Hell!</a>
+            <a href="mailto:giovan.gonzales@aol.com?Subject=Inquiry">Email Us!</a>
         </main>
 
 
 
         <footer>
-            <p>USA, Hawt Wheelz Co.- Copyright 2022©</p>
+
+            <p>USA, Hawt Wheelz Dealership.- Copyright 2022©</p>
+
         </footer>
     </div>
 
