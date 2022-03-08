@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <!--establish language used is english#-->
 <html lang="en">
@@ -11,7 +11,7 @@
 
        <!-- Meta description changes from page to page(used by search engines to describe content)
 //       <meta name="description" content="This is a description of the content on page (120 char)">-->
-        <link rel="stylesheet" href="../../home/static/home/style.css"/>
+        <link rel="stylesheet" href={% static 'home/style.css'%}/>
 
     </head>
 
@@ -20,7 +20,7 @@
     <div class= "container" >
         <header>
 
-            <img src="../../home/static/home/images/logo%201.4.svg" alt="Logo "
+            <img src={% static 'home/images/logo 1.4.svg'%} alt= "Logo"
                  style="width: 720px;height: 120px;">
 
 
@@ -39,11 +39,8 @@
 
         <main>
 
-           <img src="../../home/static/home/images/tesla.jpg" alt="coming soon "
-                 style="width: 1224px;height: 648px; position: center ">
             <h1>Hawt Wheelz</h1>
             <p>The dealership with <a href="#">Hawt</a> Prices.</p>
-
 
             <!-- <a href="https://www.google.com" target="_blank">Enter Hell!</a>  targetblank, opens link newtab when link is clicked -->
             <a href="mailto:giovan.gonzales@aol.com?Subject=Inquiry">Email Us!</a>
