@@ -1,10 +1,18 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+{% include 'home/head.html' %}
 </head>
-<body>
+
+<body class="">
+  {% include 'home/navbar.html' %}
+  {% block content %}
+  {% endblock content %}
+  {% include 'home/footer.html' %}
+
+
 
 </body>
 </html>
