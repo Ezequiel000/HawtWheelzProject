@@ -1,6 +1,6 @@
-
 html {
     height: 100%;
+    background-color: grey;
 }
 /*Classes*/
 .box1 {
@@ -8,13 +8,12 @@ html {
 
 }
 body {
-    background-color: #ffffff;
+    background-color: grey;
     /* background-color: #2f3035;           */
 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
 }
 
 .container {
@@ -40,6 +39,7 @@ nav {
     background: -webkit-linear-gradient(#dcdbdb, #c4c4c4, #dcdbdb);
     overflow: auto;
 }
+
 ul {
    /* border-color: rgb(0, 0, 0);
     /*background-color: rgba(79, 79, 79, 0.93);*/
@@ -76,9 +76,9 @@ main {
     background-size: cover;
     height: 1224px;
     text-align: center;
-    padding-top: 0px;      /*Padding places margin for the text rather than the entire frame*/
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-top: 0;      /*Padding places margin for the text rather than the entire frame*/
+    padding-left: 0;
+    padding-right: 0;
 }
 
 footer {
@@ -137,15 +137,40 @@ nav a {
 footer p {
     padding-top: 10%;
     text-align: center;
-    color: #dcdbdb;
+    color: white;
     background-color: black;
     height: 500px;
 }
 
+.card {
+    box-shadow: 0 4px 8px 0 rgba(2,2,2,0.4);
+    max-width: 250px;
+    height: 400px;
+    margin: auto;
+    font-family: Arial;
 
-.vids {
 
+}
+
+.price {
+    color: red;
+    font-size: 22px;
+}
+
+
+.detail-button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: blue;
     text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.detail-button:hover{
+    opacity: 0.5;
 }
 
 /* .no-underline { */

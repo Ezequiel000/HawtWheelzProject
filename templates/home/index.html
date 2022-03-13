@@ -1,71 +1,45 @@
-{% extends 'home/base.html' %}
+<!DOCTYPE html>
 {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRICEPTICON</title>
 
-{% block content %}
-<h1>Hawt Wheelz</h1>
-<p>The dealership with <a href="#">Hawt</a> Prices.</p>
 
-        <!-- <a href="https://www.google.com" target="_blank">Enter Hell!</a>  targetblank, opens link newtab when link is clicked -->
-             <a href="mailto:giovan.gonzales@aol.com?Subject=Inquiry">Email Us!</a>
-        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-         <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="2000">
-           <img src="{% static 'home/images/tesla.jpg' %}" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
-        </div>
-        </div>
-      <div class="carousel-item" data-bs-interval="2000">
-      <img src="{% static 'home/images/tesla-home-background.jpg' %}" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
-      </div>
-      </div>
-     <div class="carousel-item" data-bs-interval="2000">
-      <img src="{% static 'home/images/tesla.jpg' %}" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
-      </div>
-      </div>
-      </div>
-       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-       <span class="visually-hidden">Next</span>
-       </button>
-      </div>
-       <div class="card-group">
+    <link rel= "stylesheet" href = "../../static/home/style.css">
+</head>
+<body>                  <!--t-->
 
-        {% for car in new_cars %}
-        <div class="card" style="width: 18rem;">
-        <img src="{{ car.image.url }}" class="card-img-top" alt="...">
-            <div class="card-body">
-           <h5 class="card-title">{{ car.name }}</h5>
-           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">{{ car.price }} $</li>
-        <li class="list-group-item">{{ car.model }}</li>
-        <li class="list-group-item">{{ car.make }}</li>
-        </ul>
-        <div class="card-body">
-       <a href="#" class="card-link">See Details</a>
-        <a href="#" class="card-link">Add to favorites</a>
-         </div>
-        </div>
-         {% endfor  %}
-       </div>
+    <div class= "container">
+        <header>
+            <!-- <img src="images/ZPaper-2.jpg" alt="Logo for Tricepticon"> -->
+        </header>
 
-{% endblock content %}
+            <a class="active" , href = "index.html">HOME</a>
+            <a href="#">SHOP</a>
+            <a href="#">NEW ITEMS</a>
+            <a href="#">PROMO ITEMS</a>
+            <a href="#">ABOUT US</a>
+            <a href="#">CONTACT US</a>
+        <label>
+            <input type="text" placeholder="Search">
+        </label>
 
+        <main>
+            <h1>Burn Out!</h1>
+            <p>Top Quality parts Reinforced by the <a href="#">Devil</a> Himself.</p>
+        </main>
+</div>
+            <div class ="card" style = " width: 18rem;">
+                <img src= "../../static/home/images/tesla.jpg" width = 250 height = 250 alt="#"> <!-- change img src to {{ car.product_image }} was just testing images on card-->
+                <h3>{{ car.name }}</h3>
+                <p class = "price">{{ car.price }}</p>
+
+                <a href ="../detail.html" class = "detail-button">View Detail</a>
+    </div>
+ <footer>
+            <p>USA, TRICEPTICON Motorsports Co.- Copyright 2020©</p>
+        </footer>
+</body>
+</html>
