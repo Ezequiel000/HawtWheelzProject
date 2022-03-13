@@ -1,17 +1,46 @@
 {% load static %}
-<header>
-
-            <img src={% static 'home/images/logo 1.4.svg'%} alt="logo" style="width: 720px;height: 120px;">
-
-
+{% include 'home/head.html'%}
+<div class = "fluid-container">
+        <header>
+            <img src={% static 'home/images/logo 1.4.svg'%} alt="logo" style="width: 705px;height: 105px;">
         </header>
-        <nav>
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">SHOP</a></li>
-                <li><a href="#">NEW ITEMS</a></li>
-                <li><a href="#">PROMO ITEMS</a></li>
-                <li><a href="#">ABOUT US</a></li>
-                <li><a href="#">CONTACT US</a></li>
-            </ul>
-        </nav>
+</div>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">-logo-</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Inventory</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categories
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Cars</a></li>
+              <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Compact</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">SUVs</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">About</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
