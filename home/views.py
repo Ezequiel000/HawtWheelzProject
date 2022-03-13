@@ -8,3 +8,8 @@ def homepage(request):
             }
 
     return render(request, 'home/index.html', data)
+
+
+def inventory(request):
+
+    return render(request, 'home/inventory.html')

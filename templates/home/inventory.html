@@ -1,0 +1,38 @@
+{% extends 'home/base.html'%}
+{% load static %}
+
+{% block content %}
+    <style>
+    .row1 {
+    height: 100px;
+    }
+
+    </style>
+    <div class="container-lg">
+    <!--The first row will contain a search bar-->
+    <div class="row row1 align-items-center" id="search-block">
+     <div class="container-lg">
+      <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+     </div>
+    </div>
+         <!--The second row will contain filter buttons-->
+    <div class="=row justify-content-evenly" id="filter-buttons">
+        <div class="col-4">
+            color
+        </div>
+        <div class="col-4">
+            make
+        </div>
+        <div class="col-4">
+            price
+        </div>
+
+    </div>
+
+
+    </div>
+{% endblock %}
+
