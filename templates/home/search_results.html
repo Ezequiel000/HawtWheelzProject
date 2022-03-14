@@ -1,0 +1,14 @@
+{% load static %}
+
+
+{% block content %}
+    {% if searched %}
+        <h1>Search Results:</h1>
+        <br/>
+        {% for car in cars %}
+            {{ car.name }} - {{ car.image }}<br/>
+        {% endfor %}
+    {% else %}
+        <h1>No Search Results</h1>
+    {% endif %}
+{% endblock %}

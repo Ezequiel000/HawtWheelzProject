@@ -33,7 +33,13 @@
                 <li><a href="#">PROMO ITEMS</a></li>
                 <li><a href="#">ABOUT US</a></li>
                 <li><a href="#">CONTACT US</a></li>
+
             </ul>
+            <form id="search_form" method=POST action="{% url 'search_results' %}">
+                {% csrf_token %}
+                <input type="search" id="query" placeholder="Search.." name="search">
+                <button>Search</button>
+                </form>
         </nav>
 
 
