@@ -1,11 +1,11 @@
-{% extends base.html %}
+{% extends 'home/base.html' %}
 {% load static %}
 {% block content %}
 
      <link rel= "stylesheet" href = "../../static/home/detail.css">
     <div class = "container">
     <div class = "card">
-        <img src = "../../static/home/images/tesla.jpg" alt ="#" style = "float: left"> <!-- change img src to {{ car.image }} was just testing images on card-->
+        <img src = "{{ car.image }}" alt ="#" style = "float: left">
     </div>
     <br> <h1> Name: {{ car.name }}</h1>
     <p> Model: {{ car.model }}
@@ -16,7 +16,6 @@
     <p> Year: {{ car.year }}</p>
 </div>
     <div class = "bottom-left-text">
-       This is a description of  the car. <!-- We can put info on the car on top of the image if we want to. replace test with {{ car.something }} }}-->
+       This is a description of the car. <!-- We can put info on the car on top of the image if we want to. replace test with {{ car.something }} }}-->
     </div>
-</div>
 {% endblock content %}
