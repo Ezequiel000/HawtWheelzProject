@@ -10,6 +10,8 @@ class Car(models.Model):
     make = models.CharField(max_length=20)
     date_added = models.DateTimeField('date added', default=timezone.now())
     model = models.CharField(max_length=20)
+    color = models.CharField(max_length=20, default='color')
+    year = models.IntegerField(default=0)
     # Images require Pillow 9.0
     image = models.ImageField(upload_to='home/images', default='home/images/empty-default.jpg')
     price = models.IntegerField(default=0)

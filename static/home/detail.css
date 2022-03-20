@@ -1,0 +1,29 @@
+html{
+    background-color: darkgrey;
+}
+
+.container {
+    font-family: Arial;
+}
+
+img {
+    width: 900px;
+    height: 500px;
+}
+
+p {
+    font-size: 30px;
+    color: black;
+}
+h3 {
+    font-size: 40px;
+    color: black;
+}
+
+.bottom-left-text {
+    position: absolute;
+    bottom: 300px;
+    left: 16px;
+    font-size: 24px;
+    color: darkgrey;
+}

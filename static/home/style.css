@@ -1,0 +1,153 @@
+
+html {
+    height: 100%;
+}
+/*Classes*/
+.box1 {
+    background-color: #a4a4a4;
+
+}
+body {
+    background-color: #ffffff;
+    /* background-color: #2f3035;           */
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1224px;
+}
+
+
+header {
+    background-color: rgb(255, 255, 255, 0.76);
+    height:125px;  /*laptops are 1300,another common size 992,960*/
+    text-align:center;
+    font-size: 84px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    width: 100%;
+    background: linear-gradient(#dcdbdb, #c4c4c4, #dcdbdb);
+    background: -moz-linear-gradient(#dcdbdb, #c4c4c4, #dcdbdb);
+    background: -webkit-linear-gradient(#dcdbdb, #c4c4c4, #dcdbdb);
+    overflow: auto;
+}
+ul {
+   /* border-color: rgb(0, 0, 0);
+    /*background-color: rgba(79, 79, 79, 0.93);*/
+    /* height: 40px; */
+    margin: 0;
+    padding-left:10%;
+    list-style: none;
+
+    text-shadow: black;
+    font-weight: normal;
+}
+li {
+    float: left;
+}
+ul li a {
+    border-right:1px solid rgba(79, 79, 79, 0.93);
+    padding: 9px 40px;
+    color: black;
+    text-shadow: 0 0 0 #222;
+    text-decoration: none;
+    display: block;
+    font-family: Helvetica;
+}
+a:hover {
+    background: linear-gradient(#000, rgba(79, 79, 79, 0.93));
+    background: -moz-linear-gradient(#000, rgba(79, 79, 79, 0.93));
+    background: -webkit-linear-gradient(#000, rgba(79, 79, 79, 0.93));
+    color: #f2f2f2;
+}
+
+main {
+    /* background-color: orange;   used for creating a frame but can delete after*/
+    /*background-image: url("images/tesla-home-background.jpg");*/
+    background-size: cover;
+    height: 1224px;
+    text-align: center;
+    padding-top: 0px;      /*Padding places margin for the text rather than the entire frame*/
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+footer {
+    background-color: rgb(255, 0, 0);
+    /* height: 50px; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+footer h3 {
+    padding-top: 30%;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: bold;
+    position: center;
+    color: #ff0000;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #a4a4a4;
+}
+
+h1 {
+    font-size: 84px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+    font-size: 84px;
+    font-style: italic;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+p {
+    font-size: 18px;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    /* text-decoration: none; */
+
+}
+
+nav a {
+     /* this is basically an if then for a tags. if a tag in nav then do this */
+    text-decoration: none;
+    font-size: 13px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+footer p {
+    padding-top: 10%;
+    text-align: center;
+    color: #dcdbdb;
+    background-color: black;
+    height: 500px;
+}
+
+
+.vids {
+
+    text-align: center;
+}
+
+/* .no-underline { */
+    /* text-decoration: none; then in */
+/* } */
