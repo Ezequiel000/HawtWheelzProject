@@ -5,12 +5,10 @@ html {
 /*Classes*/
 .box1 {
     background-color: #a4a4a4;
-
 }
 body {
     background-color: #ffffff;
     /* background-color: #2f3035;           */
-
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -76,9 +74,9 @@ main {
     background-size: cover;
     height: 1224px;
     text-align: center;
-    padding-top: 0px;      /*Padding places margin for the text rather than the entire frame*/
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-top: 0;      /*Padding places margin for the text rather than the entire frame*/
+    padding-left: 0;
+    padding-right: 0;
 }
 
 footer {
@@ -148,8 +146,12 @@ footer p {
     left: 16px;
     font-size: 24px;
     color: darkgrey;
-
 }
+
+img {
+    object-fit: cover;
+}
+
 /* .no-underline { */
     /* text-decoration: none; then in */
 /* } */
