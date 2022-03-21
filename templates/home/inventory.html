@@ -32,6 +32,31 @@
 
     </div>
 
+     <!--Card group added-->
+     <br><br>
+    <h3> Inventory </h3>
+    <br>
+       <div class="card-group">
+        {% for car in inventory_cars %}
+        <div class="card" style="width: 18rem;">
+        <img src="{{ car.image.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+           <h5 class="card-title">{{ car.name }}</h5>
+           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ car.price }} $</li>
+        <li class="list-group-item">{{ car.model }}</li>
+        <li class="list-group-item">{{ car.make }}</li>
+        </ul>
+        <div class="card-body">
+       <a href="#" class="card-link">See Details</a>
+        <a href="#" class="card-link">Add to favorites</a>
+         </div>
+        </div>
+         {% endfor  %}
+       </div>
+ <!--Card group ended-->
 
     </div>
 {% endblock %}
