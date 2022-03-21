@@ -25,7 +25,7 @@ body {
 
 
 header {
-    background-color: rgb(255, 255, 255, 0.76);
+    background-color: rgba(255, 255, 255, 0.76);
     height:125px;  /*laptops are 1300,another common size 992,960*/
     text-align:center;
     font-size: 84px;
@@ -82,7 +82,7 @@ main {
 }
 
 footer {
-    background-color: rgb(255, 0, 0);
+    background-color: rgba(255, 255, 255, 0.055);
     /* height: 50px; */
     padding-top: 10px;
     padding-bottom: 10px;
@@ -95,7 +95,7 @@ footer h3 {
     font-style: italic;
     font-weight: bold;
     position: center;
-    color: #ff0000;
+    color: #dcdbdb;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #a4a4a4;
 }

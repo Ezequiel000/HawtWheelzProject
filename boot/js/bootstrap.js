@@ -1096,7 +1096,7 @@
   const DATA_API_KEY$6 = '.data-api';
   const ARROW_LEFT_KEY = 'ArrowLeft';
   const ARROW_RIGHT_KEY = 'ArrowRight';
-  const TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to// fire after touch
+  const TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to fire after touch
 
   const SWIPE_THRESHOLD = 40;
   const Default$a = {
