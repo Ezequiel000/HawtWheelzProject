@@ -1,5 +1,6 @@
 {% extends 'home/base.html'%}
 {% load static %}
+{% load widget_tweaks %}
 
 {% block content %}
     <style>
@@ -12,27 +13,38 @@
     <!--The first row will contain a search bar-->
     <div class="row row1 align-items-center" id="search-block">
      <div class="container-lg">
-      <form class="d-flex">
+      <form class="d-flex" method="get">
+            {{ filter.form.name.label_tag }}
+            {% render_field filter.form.name class="form-control" %}
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
      </div>
     </div>
          <!--The second row will contain filter buttons-->
-    <div class="=row justify-content-evenly" id="filter-buttons">
+    <form method="get">
+        <div class="=row justify-content-evenly" id="filter-buttons">
         <div class="col-4">
-            color
+            {{ filter.form.color.label_tag }}
+            {% render_field filter.form.color class="form-control" %}
         </div>
         <div class="col-4">
-            make
+            {{ filter.form.make.label_tag }}
+            {% render_field filter.form.make class="form-control" %}
         </div>
         <div class="col-4">
-            price
+            {{ filter.form.price.label_tag }}
+            {% render_field filter.form.price class="form-control" %}
         </div>
+        <button type="submit" class="btn btn-outline-success">
+        <span class="glyphicon glyphicon-search"></span> Search
+      </button>
+    </div>
+          </form>
+
+
 
     </div>
 
-
-    </div>
 {% endblock %}
 

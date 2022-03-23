@@ -8,7 +8,7 @@ class Car(models.Model):
     # Fields
     name = models.CharField(max_length=20)
     make = models.CharField(max_length=20)
-    date_added = models.DateTimeField('date added', default=timezone.now())
+    date_added = models.DateTimeField(auto_now_add=True)
     model = models.CharField(max_length=20)
     color = models.CharField(max_length=20, default='color')
     year = models.IntegerField(default=0)
