@@ -16,4 +16,4 @@ def inventory(request):
     context = {
         'inventory_cars': inventory_cars
     }
-    return render(request, 'home/inventory.html')
+    return render(request, 'home/inventory.html',context)

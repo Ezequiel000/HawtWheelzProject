@@ -33,12 +33,14 @@
     </div>
 
      <!--Card group added-->
+     </div>
      <br><br>
     <h3> Inventory </h3>
     <br>
        <div class="card-group">
         {% for car in inventory_cars %}
-        <div class="card" style="width: 18rem;">
+        {#  <div class="card" style="width: 18rem;"> #}
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <img src="{{ car.image.url }}" class="card-img-top" alt="...">
             <div class="card-body">
            <h5 class="card-title">{{ car.name }}</h5>
