@@ -11,5 +11,9 @@ def homepage(request):
 
 
 def inventory(request):
+    inventory_cars = Car.objects.all()
 
-    return render(request, 'home/inventory.html')
+    context = {
+        'inventory_cars': inventory_cars
+    }
+    return render(request, 'home/inventory.html',context)
