@@ -4,6 +4,9 @@ from .models import Car
 class CarFilter(django_filters.FilterSet):
     name = django_filters.CharFilter(lookup_expr='icontains')
     make = django_filters.CharFilter(lookup_expr='icontains')
+    price_gt = django_filters.NumberFilter(field_name='price', lookup_expr='gt')
+    price_lt = django_filters.NumberFilter(field_name='price', lookup_expr='lt')
     class Meta:
         model = Car
-        fields = ('name', 'color', 'make', 'price')
+        fields = ['name', 'color', 'make', 'price']
+

@@ -3,6 +3,7 @@
 {% load widget_tweaks %}
 
 {% block content %}
+
     <style>
     .row1 {
     height: 100px;
@@ -22,21 +23,25 @@
      </div>
     </div>
          <!--The second row will contain filter buttons-->
-    <form method="get">
-        <div class="=row justify-content-evenly" id="filter-buttons">
-        <div class="col-4">
-            {{ filter.form.color.label_tag }}
-            {% render_field filter.form.color class="form-control" %}
+    <form method="get" action="{% url 'inventory' %}">
+        <div class="row justify-content-evenly" id="filter-buttons">
+        <div class="col-2">
+            {{ car_filter.form.color.label_tag }}
+            {% render_field car_filter.form.color class="form-control" %}
         </div>
-        <div class="col-4">
-            {{ filter.form.make.label_tag }}
-            {% render_field filter.form.make class="form-control" %}
+        <div class="col-2">
+            {{ car_filter.form.make.label_tag }}
+            {% render_field car_filter.form.make class="form-control" %}
         </div>
-        <div class="col-4">
-            {{ filter.form.price.label_tag }}
-            {% render_field filter.form.price class="form-control" %}
+        <div class="col-2">
+            {{ car_filter.form.price_gt.label_tag }}
+            {% render_field car_filter.form.price_gt class="form-control" %}
         </div>
-        <button type="submit" class="btn btn-outline-success">
+            <div class="col-2">
+            {{ car_filter.form.price_lt.label_tag }}
+            {% render_field car_filter.form.price_lt class="form-control" %}
+        </div>
+        <button type="submit" class="btn btn-outline-success col-sm-2">
         <span class="glyphicon glyphicon-search"></span> Search
       </button>
     </div>
