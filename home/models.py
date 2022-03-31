@@ -2,13 +2,14 @@ import datetime
 from django.db import models
 from django.utils.html import mark_safe
 from django.utils import timezone
+from django.urls import reverse
 
 
 class Car(models.Model):
     # Fields
     name = models.CharField(max_length=20)
     make = models.CharField(max_length=20)
-    date_added = models.DateTimeField(auto_now_add=True)
+    date_added = models.DateTimeField('date added')
     model = models.CharField(max_length=20)
     color = models.CharField(max_length=20, default='color')
     year = models.IntegerField(default=0)
@@ -22,12 +23,3 @@ class Car(models.Model):
     def was_added_recently(self):  # will return true if the car was added in the last week
         now = timezone.now()
         return now - datetime.timedelta(days=7) <= self.date_added <= now
-
-
-class NavBar(models.Model):
-    # Fields
-    option_text = models.CharField(max_length=20, default='Text')
-
-    # Methods
-    def __str__(self):
-        return self.option_text
