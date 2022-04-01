@@ -16,6 +16,7 @@ class Car(models.Model):
     # Images require Pillow 9.0
     image = models.ImageField(upload_to='home/images', default='home/images/empty-default.jpg')
     price = models.IntegerField(default=0)
+    description = models.CharField(max_length=500, default= 'des')
 
     def __str__(self):
         return self.name
