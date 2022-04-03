@@ -1,0 +1,23 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container">
+    <div class = "card" style="background-color: #999">
+        <div class = "row">
+            <div class = "col-md-8">
+                <img src="{{ cars.image.url }}" alt = "#" class ="img-fluid">
+
+            </div>
+            <div class = "col-md-4">
+                 <h1 class = "card-title"> Name: {{ cars.name }}</h1>
+                <p class = "card-text"> Model: {{ cars.model }} </p>
+                <p class = "card-text"> Make: {{ cars.make }} </p>
+                <p class = "card-text"> Color: {{ cars.color }}</p>
+                <p class = "card-text"> Year: {{ cars.year }}</p>
+                <h3 class = "card-subtitle"> Price: {{ cars.price }}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+html{
+    background-color: #999;
+}
+
+.container {
+    font-family: Arial;
+}
+
+img {
+    width: 800px;
+    height: 400px;
+}
+
+p {
+    font-size: 30px;
+    color: black;
+    display: inline-block;
+}
+h3 {
+    font-size: 40px;
+    color: black;
+    display: inline-block;
+}

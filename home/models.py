@@ -2,7 +2,7 @@ import datetime
 from django.db import models
 from django.utils.html import mark_safe
 from django.utils import timezone
-
+from django.urls import reverse
 
 class Car(models.Model):
     # Fields
@@ -18,6 +18,11 @@ class Car(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('car_detail', kwargs = {
+                'car_id': self.id
+        })
 
     def was_added_recently(self):  # will return true if the car was added in the last week
         now = timezone.now()
