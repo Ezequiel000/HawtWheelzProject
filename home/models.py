@@ -19,7 +19,7 @@ class Car(models.Model):
     def __str__(self):
         return self.name
 
-    def get_absolute_url(self):
+    def get_detail(self): # will return car info needed for the detail html
         return reverse('car_detail', kwargs = {
                 'car_id': self.id
         })

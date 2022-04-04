@@ -2,15 +2,15 @@
 {% load static %}
 {% block content %}
 
-    <div class="container">
+    <div class="container-fluid"> {# starts the container for the detail html #}
     <div class = "card" style="background-color: #999">
         <div class = "row">
             <div class = "col-md-8">
-                <img src="{{ cars.image.url }}" alt = "#" class ="img-fluid">
+                <img src="{{ cars.image.url }}" alt = "#" class ="img-fluid"> {#  grabs image for the car's detail #}
 
             </div>
-            <div class = "col-md-4">
-                 <h1 class = "card-title"> Name: {{ cars.name }}</h1>
+            <div class = "col-md-3"> {# Creates the card place for the text to print the info #}
+                <h1 class = "card-title"> Name: {{ cars.name }}</h1>
                 <p class = "card-text"> Model: {{ cars.model }} </p>
                 <p class = "card-text"> Make: {{ cars.make }} </p>
                 <p class = "card-text"> Color: {{ cars.color }}</p>
@@ -19,5 +19,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> {# end of container #}
 {% endblock content %}
