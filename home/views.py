@@ -26,3 +26,12 @@ def about(request):
   
 
     return render(request, 'home/about.html')
+
+
+def car_detail(request, car_id):
+    cars = get_object_or_404(Car, id=car_id)
+
+    context = {
+        'cars':cars
+    }
+    return render(request, 'home/detail.html', context)
