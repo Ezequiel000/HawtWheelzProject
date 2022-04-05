@@ -4,35 +4,36 @@
 
     <div class = "card"> {# Creates the card for the first image #}
         <img class="card-img" src = "{% static 'home/images/tesla-home-background.jpg' %}" style="width: 100%" alt="..."> {# image source #}
-        <div class = "card-img-overlay text-center opacity-75"
+        <div class = "card-img-overlay text-white text-center opacity-75"
              style = "background-color: black; width: 100%; height: 30%; top: 90%; left: 50%;
                       transform: translate(-50%,-50%)"> {# The text overlay for the image itself along with the text underneath #}
-            <h1 class="text-white " style = "font-size: 100px; font-style: italic">Hawt Wheelz</h1>
-            <h4 class="text-white">100'S OF NEW OFFERS: DRIVE AWAY IN YOUR DREAM CAR TODAY</h4>
+            <h1 style = "font-size: 100px; font-style: italic">Hawt Wheelz</h1>
+            <h4>100'S OF NEW OFFERS: DRIVE AWAY IN YOUR DREAM CAR TODAY</h4>
         </div>
     </div>
 
 
     <div class="container-fluid" style="background-color: black; height: auto" > {# Creates the container to hold the card group together #}
-        <br>
-        <br>
-
-        <h1 class="text-xl-center text-white" style="background-color: black">BEST DEALS</h1>
-        <h4 class="text-white text-center">AMAZING NEW CARS AT AMAZING PRICES</h4>
+        <br> <br>
+        <h1 class="text-xl-center text-white" style= "background-color: black;">BEST DEALS</h1>
+        <h4 class="text-center text-white">AMAZING NEW CARS AT AMAZING PRICES!!!</h4>
     <br>
 
     <div class="card-group" style = "width: 40rem;">  {# start of card group #}
+
   {% for car in new_cars %}  {# start of for loop to read all data in the database to print cards #}
 
-  <div class="card" style = "background-color: gray">
+  <div class="card" style = "background-color: lightgrey">
     <img class="card-img-top" src="{{ car.image.url }}" alt="..." style = "height: 200px">
     <div class="card-body">
-        <h5 class="card-title">{{ car.make }}</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <h5 class="card-title">{{ car.name }}</h5>
+        <h4 class = "card-text">{{ car.make }}</h4>
+        <h3 class="card-text">$ {{ car.price }}</h3>
         <a href="{{ car.get_detail }}" class="card-link">See Details</a>
         <a href="#" class="card-link">Add to favorites </a>
     </div>
   </div>
+
 
 {% endfor %} {# end of for loop #}
     </div>
