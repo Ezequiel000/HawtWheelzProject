@@ -24,3 +24,8 @@ class Car(models.Model):
     def was_added_recently(self):  # will return true if the car was added in the last week
         now = timezone.now()
         return now - datetime.timedelta(days=7) <= self.date_added <= now
+
+    def get_detail(self):  # will return car info needed for the detail html
+        return reverse('car_detail', kwargs={
+            'car_id': self.id
+        })

@@ -2,19 +2,31 @@
 {% load static %}
 {% block content %}
 
-     <link rel= "stylesheet" href = "../../static/home/detail.css">
-    <div class = "container">
-    <div class = "card">
-        <img src = "{{ car.background }}" alt ="#" style = "float: left">
+    <div class = "card-img">
+        <img src="{% static 'home/images/wheel1.png' %}" width ="100%" height="400px" alt="..." style = "background-attachment: fixed;
+        background-position: center;background-size: cover">
+
+        <div class = "card-img-overlay text-white text-center opacity-75"
+             style = "background-color: black; width: 100%; height: 15%; top: 66%; left: 50%;
+                      transform: translate(-50%,-50%)"> {# The text overlay for the image itself along with the text underneath #}
+            <h3 style = "font-size: 50px; font-style: italic">Specs</h3>
+        </div>
     </div>
-    <br> <h1> Name: {{ car.name }}</h1>
-    <p> Model: {{ car.model }}
-    <p> Make: {{ car.make }}
-    <p> Color: {{ car.color }}</p>
-    <h3> Price: {{ car.price }}</h3>
-    <p> Year: {{ car.year }}</p>
-</div>
-    <div class = "bottom-left-text">
-       This is a description of the car. <!-- We can put info on the car on top of the image if we want to. replace test with {{ car.something }} }}-->
+
+    <div class= "text-center" style = "width: 100%;"> {# starts the container for the detail html #}
+                <img src="{{ cars.image.url }}" alt = "#"> {#  grabs image for the car's detail #}
     </div>
+            <div class = "text-center">
+            <h1 style = "font-style: italic;">Car Info:</h1>
+            </div>
+
+            <ul class = "row-cols-2 modal-dialog-centered list-group list-group-flush"> {# Creates the row and column for the content#}
+                <li class = "list-group-item" style = "background-color: lightgrey"> Name: {{ cars.name }}</li>
+                <li class = "list-group-item" style = "background-color: lightgrey"> Model: {{ cars.model }} </li>
+                <li class = "list-group-item" style = "background-color: lightgrey"> Make: {{ cars.make }} </li>
+                <li class = "list-group-item" style = "background-color: lightgrey"> Color: {{ cars.color }}</li>
+                <li class = "list-group-item" style = "background-color: lightgrey"> Year: {{ cars.year }}</li>
+                <li class = "list-group-item" style = "background-color: lightgrey"> Price: ${{ cars.price }}</li>
+            </ul>
+{# end of column #}
 {% endblock content %}
