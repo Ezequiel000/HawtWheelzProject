@@ -18,7 +18,8 @@ def inventory(request):
     context = {
         'inventory_cars': inventory_cars
     }
-    return render(request, 'home/inventory.html', context)#context contains all data sent
+    #context contains all data sent
+    return render(request, 'home/inventory.html', context)
   
   
 
