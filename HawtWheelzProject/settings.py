@@ -68,6 +68,10 @@ DATABASES = {
     'default': {
         'ENGINE': os.getenv("DATABASE", 'django.db.backends.sqlite3'),
         'NAME': os.getenv("PGDATABASE", BASE_DIR / 'db.sqlite3'),
+        'USER': os.getenv("PGUSER",""),
+        'PASSWORD': os.getenv("PGPASSWORD", ""),
+        'HOST': os.getenv("PGHOST", ""),
+        'PORT': os.getenv("PGPORT", ""),
     }
 }
 
