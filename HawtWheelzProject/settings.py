@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-m)peo6jrdh977a4&a@i5d&v17xt42!z^isx6o!%9mv%z(6+0ep
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['hyperwheelz.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['hyperwheelz.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
@@ -68,7 +68,7 @@ DATABASES = {
     'default': {
         'ENGINE': os.getenv("DATABASE", 'django.db.backends.sqlite3'),
         'NAME': os.getenv("PGDATABASE", BASE_DIR / 'db.sqlite3'),
-        'USER': os.getenv("PGUSER",""),
+        'USER': os.getenv("PGUSER", ""),
         'PASSWORD': os.getenv("PGPASSWORD", ""),
         'HOST': os.getenv("PGHOST", ""),
         'PORT': os.getenv("PGPORT", ""),
@@ -113,8 +113,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'root')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    #os.path.join(BASE_DIR, "boot")
-                    ]
+    # os.path.join(BASE_DIR, "boot")
+]
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -128,4 +128,4 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_S3_ACCESS_KEY_ID = 'BUCKETEER_AWS_ACCESS_KEY_ID'
 AWS_S3_SECRET_ACCESS_KEY = 'BUCKETEER_AWS_SECRET_ACCESS_KEY'
 AWS_STORAGE_BUCKET_NAME = 'BUCKETEER_BUCKET_NAME'
-AWS_S3_REGION_NAME = 'BUCKETEER_AWS_REGION'
+AWS_S3_REGION_NAME = 'us-east-1'
