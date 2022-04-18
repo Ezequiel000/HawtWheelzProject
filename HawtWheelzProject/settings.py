@@ -123,10 +123,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_S3_ACCESS_KEY_ID = 'BUCKETEER_AWS_ACCESS_KEY_ID'
-AWS_S3_SECRET_ACCESS_KEY = 'BUCKETEER_AWS_SECRET_ACCESS_KEY'
-AWS_S3_STORAGE_BUCKET_NAME = 'BUCKETEER_BUCKET_NAME'
-AWS_S3_REGION_NAME = 'BUCKETEER_AWS_REGION'
+if DEBUG:
+    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+else:
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    AWS_ACCESS_KEY_ID = os.getenv('BUCKETEER_AWS_ACCESS_KEY_ID', '')
+    AWS_SECRET_ACCESS_KEY = os.getenv('BUCKETEER_AWS_SECRET_ACCESS_KEY', '')
+    AWS_STORAGE_BUCKET_NAME = os.getenv('BUCKETEER_BUCKET_NAME', '')
+    AWS_REGION_NAME = os.getenv('BUCKETEER_AWS_REGION', '')
