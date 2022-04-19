@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Car
-
+from .filters import CarFilter
 
 def homepage(request):
     new_cars = Car.objects.order_by('-date_added')[:5]
@@ -15,8 +15,13 @@ def inventory(request):
 
     inventory_cars = Car.objects.all()
 
+    car_list = Car.objects.all()
+    car_filter = CarFilter(request.GET, queryset=car_list)
+    car_list = car_filter.qs
+
     context = {
-        'inventory_cars': inventory_cars
+        'inventory_cars': inventory_cars,
+        'car_list': car_list, 'car_filter': car_filter
     }
     #context contains all data sent
     return render(request, 'home/inventory.html', context)

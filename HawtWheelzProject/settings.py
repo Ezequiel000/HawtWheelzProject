@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'django_filters',
+    'widget_tweaks'
     # 'home.apps.HomeConfig', I commented this out and used 'home' instead
 ]
 
