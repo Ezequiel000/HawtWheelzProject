@@ -4,14 +4,36 @@ from django.utils.html import mark_safe
 from django.utils import timezone
 from django.urls import reverse
 
+MAKE_CHOICES = {
+    ("Tesla", "Tesla"),
+    ("Hyundai", "Hyundai"),
+    ("Kia", "Kia"),
+    ("Polestar", "Polestar"),
+    ("FIAT", "FIAT"),
+    ("Chevrolet", "Chevrolet"),
+    ("Porche", "Porche"),
+    ("Audi", "Audi"),
+    ("Jeep", "Jeep"),
+    ("GMC", "GMC"),
+    ("Ford", "Ford")
+}
+
+COLOR_CHOICES = {
+    ("Black", "Black"),
+    ("White", "White"),
+    ("Red", "Red"),
+    ("Blue", "Blue"),
+    ("Green", "Green"),
+    ("Silver", "Silver")
+}
 
 class Car(models.Model):
     # Fields
     name = models.CharField(max_length=20)
-    make = models.CharField(max_length=20)
-    date_added = models.DateTimeField('date added')
+    make = models.CharField(max_length=20, choices=MAKE_CHOICES, default='make')
     model = models.CharField(max_length=20)
-    color = models.CharField(max_length=20, default='color')
+    date_added = models.DateTimeField('date added')
+    color = models.CharField(max_length=20, choices=COLOR_CHOICES, default='color')
     year = models.IntegerField(default=0)
     # Images require Pillow 9.0
     image = models.ImageField(upload_to='home/images', default='home/images/empty-default.jpg')

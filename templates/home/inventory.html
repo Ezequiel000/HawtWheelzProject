@@ -22,9 +22,10 @@
     <div class="container-lg">
     <!--The first row will contain a search bar-->
    <div class="row row1 align-items-center" id="search-block">
-     <div class="container-lg">
-      <form class="d-flex" method="get">
-            {{ filter.form.name.label_tag }}
+     <form class="d-flex" method="get" action="{% url 'inventory' %}">
+         <div class="container-lg">
+
+            {{ car_filter.form.name.label_tag }}
             {% render_field filter.form.name class="form-control" %}
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
@@ -62,7 +63,7 @@
 
     <br>
        <div class="card-group">
-        {% for car in inventory_cars %}
+        {% for car in car_list %}
         {#  <div class="card" style="width: 18rem;"> #}
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <img src="{{ car.image.url }}" class="card-img-top" alt="...">

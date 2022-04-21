@@ -11,21 +11,31 @@ def homepage(request):
 
 
 def inventory(request):
-    #this holds all cars in the database 
-
-    inventory_cars = Car.objects.all()
+    #this holds all cars in the database
 
     car_list = Car.objects.all()
     car_filter = CarFilter(request.GET, queryset=car_list)
     car_list = car_filter.qs
 
     context = {
-        'inventory_cars': inventory_cars,
         'car_list': car_list, 'car_filter': car_filter
     }
     #context contains all data sent
     return render(request, 'home/inventory.html', context)
-  
+
+def search_results_view(request):
+    if request.method == "get":
+        car_list = Car.objects.all()
+        car_filter = CarFilter(request.GET, queryset=car_list)
+        car_list = car_filter.qs
+        context = {
+            'car_list': car_list, 'car_filter': car_filter
+        }
+        return render(request, 'home/inventory.html', context)
+    else:
+        car_list = Car.objects.all()
+
+        return render(request, 'home/inventory.html', {'car_list': car_list})
   
 
 def about(request):
