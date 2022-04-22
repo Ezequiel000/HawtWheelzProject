@@ -1,7 +1,11 @@
 {% extends 'home/base.html' %}
 {% load static %}
 {% block content %}
-
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
     {# Creates the card for the first image on the homepage#}
         <img class="card-img" src = "{% static 'home/images/tesla-home-background.jpg' %}" style="width: 100%" alt="..."> {# image source #}
         <div class = "card-img-overlay text-white text-center opacity-75"
@@ -9,23 +13,21 @@
                       transform: translate(-50%,-50%)"> {# The text overlay for the image itself along with the text underneath #}
             <h1 style = "font-size: 100px; font-style: italic">Hyper Wheelz</h1>
             <h4>100'S OF NEW OFFERS: DRIVE AWAY IN YOUR DREAM CAR TODAY</h4>
+        </div>
 
-
-    </div>
-
-
-
-    <div class="container-fluid " style="background-color: black; height: auto; background-size: cover" > {# Creates the container to hold the card group together #}
+    <div class="container-fluid" style="background-color: black; height: auto; background-size: cover" > {# Creates the container to hold the card group together #}
         <br>
         <h1 class="text-center text-white" style= "background-color: black;">NEW ARRIVALS</h1>
         <h4 class="text-center text-white">AMAZING NEW CARS AT AMAZING PRICES!!!</h4>
-    <br>
 
-
-    <div class="card-group">  {# start of card group #}
+    <div class="container my-5">
+<div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-1 pt-1" style ="overflow-x: auto">  {# start of card group, wanting to add scroll bar feature of cars here #}
   {% for car in new_cars %}  {# start of for loop to read all data in the database to print cards #}
-  <div class="card" style = "background-color: lightgrey">
+      <div class ="col-4">
+  <div class="card" style = "background-color: lightgrey; padding: 0px; height: 100%">
+  <a href ="{{ car.get_detail }}">
     <img class="card-img-top" src="{{ car.image.url }}" alt="...">
+  </a>
     <div class="card-body">
         <h5 class="card-title">{{ car.name }}</h5>
         <h4 class="card-text">{{ car.make }}</h4>
@@ -35,14 +37,42 @@
         <a href="#" class="card-link">Add to favorites </a>
     </div>
   </div>
-
+      </div>
 
 {% endfor %} {# end of for loop #}
     </div>
-    </div> {# closing both container and card group#}
+    </div>
+    </div>{# closing both container and card group#}
+
+<h1 class="text-center">BEST NEW DEALS!!!</h1>
+     <div class="card-group justify-content-center">  {# start of card group #}
+  {% for car in best_deal %}  {# start of for loop to read all data in the database to print cards #}
+      <div class ="row">
+      <div class ="col-auto">
+
+      <div class ="container-fluid mt-3">
+      <div class="col-auto mb-3">
+  <div class="card" style = "background-color: lightgrey; padding: 0px; width: 22rem; border-color: darkslategray">
+        <a href ="{{ car.get_detail }}">
+    <img class="card-img-top" src="{{ car.image.url }}" alt="..." style ="height: 18rem;">
+        </a>
+    <div class="card-body">
+        <h5 class="card-title">{{ car.name }}</h5>
+        <h4 class="card-text">{{ car.make }}</h4>
+        <h3 class="card-text">$ {{ car.price }}</h3>
+        <a href="{{ car.get_detail }}" class="card-link">See Details</a>
+        <br>
+        <a href="#" class="card-link">Add to favorites </a>
+    </div>
+  </div>
+      </div>
+      </div>
+      </div>
+      </div>
+{% endfor %} {# end of for loop #}
+     </div>
 
     <img src="{% static 'home/images/bg.jpg' %}" width ="100%" alt="..." style = "background-attachment: fixed;
     background-position: center; background-repeat: no-repeat; background-size: cover"> {# image at the bottom so when you scroll it moves #}
 
 {% endblock content %}
-
