@@ -19,11 +19,16 @@ def inventory(request):
         'inventory_cars': inventory_cars
     }
     return render(request, 'home/inventory.html', context)#context contains all data sent
-  
-  
+
+
+def search_cars(request):
+    if request.method == "GET":
+        searched = request.GET['searched']
+        inventory_cars = Car.objects.all(name__contains=searched)
+        return render(request, 'home/inventory.html', {'searched': searched})
+
 
 def about(request):
-  
 
     return render(request, 'home/about.html')
 
