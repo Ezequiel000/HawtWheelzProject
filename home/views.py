@@ -11,7 +11,7 @@ def homepage(request):
 
 
 def inventory(request):
-    #this holds all cars in the database 
+    #this holds all cars in the database
 
     inventory_cars = Car.objects.all()
 
@@ -20,13 +20,18 @@ def inventory(request):
     }
     #context contains all data sent
     return render(request, 'home/inventory.html', context)
-  
-  
+
+
 
 def about(request):
-  
+
 
     return render(request, 'home/about.html')
+
+
+def login(request):
+
+    return render(request, 'home/login.html')
 
 
 def car_detail(request, car_id):
