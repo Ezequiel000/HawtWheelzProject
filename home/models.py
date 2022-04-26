@@ -3,6 +3,7 @@ from django.db import models
 from django.utils.html import mark_safe
 from django.utils import timezone
 from django.urls import reverse
+from django.contrib.auth.base_user import AbstractBaseUser
 
 
 class Car(models.Model):
