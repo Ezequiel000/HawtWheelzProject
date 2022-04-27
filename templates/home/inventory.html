@@ -24,10 +24,8 @@
    <div class="row row1 align-items-center" id="search-block">
      <form class="d-flex" method="get" action="{% url 'inventory' %}">
          <div class="container-lg">
-
             {{ car_filter.form.name.label_tag }}
-            {% render_field filter.form.name class="form-control" %}
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            {% render_field car_filter.form.name class="form-control" %}
       <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
      </div>
