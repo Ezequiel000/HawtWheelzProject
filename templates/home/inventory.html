@@ -21,17 +21,17 @@
     </div>
     <div class="container-lg">
     <!--The first row will contain a search bar-->
-   <div class="row row1 align-items-center" id="search-block">
-     <form class="d-flex" method="get" action="{% url 'inventory' %}">
-         <div class="container-lg">
-            {{ car_filter.form.name.label_tag }}
-            {% render_field car_filter.form.name class="form-control" %}
-      <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-     </div>
-    </div>
+        <div class="row row1 align-items-center" id="search-block">
+            <form class="d-flex" method="get" action="{% url 'inventory' %}">
+                {% csrf_token %}
+                <label class="label">Name:</label>
+                {% render_field car_filter.form.name class="form-control" placeholder="Search" %}
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </form>
+        </div>
          <!--The second row will contain filter buttons-->
         <form method="get" action="{% url 'inventory' %}">
+            {% csrf_token %}
         <div class="row justify-content-evenly" id="filter-buttons">
         <div class="col-2">
             {{ car_filter.form.color.label_tag }}
@@ -49,7 +49,7 @@
             {{ car_filter.form.price_lt.label_tag }}
             {% render_field car_filter.form.price_lt class="form-control" %}
         </div>
-        <button type="submit" class="btn btn-outline-success col-sm-2">
+        <button type="submit" class="btn btn-outline-secondary col-sm-2">
         <span class="glyphicon glyphicon-search"></span> Search
       </button>
     </div>
