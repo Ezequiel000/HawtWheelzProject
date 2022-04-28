@@ -2,78 +2,49 @@
 {% load static %}
 
 {%  block content %}
+<section class="vh-100 gradient-custom" style="
+                background: radial-gradient(circle,
+                rgba(111,126, 133, 1) 0%,
+                rgba(13,17,22,1) 100%);>
+  <div class="container py-5 h-100"  >
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
 
- <img class="background-image" src = "{% static 'home/images/tesla-home-background.jpg' %}" style="width: 100%" alt="..."> {# image source #}
-      <!--Main Navigation-->
-  <header>
-    <style>
-      #intro {
-        height: 115vh;
-      }
-      /* Height for devices larger than 576px */
-      @media (min-width: 992px) {
-        #intro {
-          margin-top: -300px;
-        }
-      }
+            <div class="mb-md-5 mt-md-4 pb-5">
 
-    </style>
+              <h2 class="fw-bold mb-2 text-uppercase">HyperWheelz Login</h2>
+              <p class="text-white-50 mb-5">Please enter your email and password!</p>
 
-<!-- Background image -->
-    <div id="intro" class="bg-image shadow-2-strong">
-      <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8);">
-        <div class="container">
-          <div class="row justify-content-center">
-              <form class="bg-white  rounded-5 shadow-5-strong p-5">
+              <div class="form-outline form-white mb-4">
+                <input type="email" id="typeEmailX" class="form-control form-control-lg" />
+                <label class="form-label" for="typeEmailX">Email</label>
+              </div>
 
+              <div class="form-outline form-white mb-4">
+                <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                <label class="form-label" for="typePasswordX">Password</label>
+              </div>
 
- <!--Little Line-->
-      <hr class="my-5" />
+              <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
 
-    <! – Main Content Section – >
-<section class="page-section" id="main-content">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
+              <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+
+            <div>
+              <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a>
+              </p>
+            </div>
 
 
-             <h2>About Us</h2>
-          <p class="fw-bold">Amidst a panoramic, HyperWheelz was founded by Ezequiel Hernandez in 2022. It all started when Professor Jennifer Jin assigned the engineers to group four on one fateful day. </p>
-      <p class="lh-1">One man's vision to create the best car dealership with the fairest prices for electric cars. Along the way they utilized the lessons that they learned from CSE 4550. They built a business using team management, hard work, and first hand experience with html, css, django, and github. It was quite a journey for these engineers. HyperWheelz will become a household name for all CSUSB students as gas prices raise and students go broke. Electric cars will be the car the future. By Spring 2022 we hope to provide the best user experience in the city of San Bernardino. </p>
 
-          <p class="lh-1"></p>
 
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-         <hr class="my-5" />
-    <h2>Background</h2>
-<p class="fw-bold"> Why choose us? </p>
-   <p class="lh-1">We offer the best deals on electric cars along with student discounts for coyote students. GO COYOTES! Since gas cost an arm and a leg these days, electric cars will be more cost-efficient. According to Feilding Cage, The long road to electric cars, “Less than 1% of the 250 million cars, SUVs and light-duty trucks on the road in the United States are electric.” Looking at the IHS Markit industry analysis about 45% of cars sales could be electric by 2035. Our company is 13 years ahead of everyone else.</p>
-<p class="lh-1">-We have one semester of experience</p>
-    <p class="lh-1">-Award-winning service </p>
-    <p class="lh-1">-No hidden cost</p>
-    <p class="lh-1">-Different make, model, and prices </p>
-    <p class="fw-bold"> Features</p>
-      <p class="lh-1">-Can be used on mobile and any web browser</p>
-      <p class="lh-1">-Create an account</p>
-      <p class="lh-1">-Login page</p>
-    <p class="lh-1">-Favorites and Details page</p>
-    <p class="fw-bold"> HyperWheelz Mission </p>
-    <p class="lh-lg">*We will respect your time.</p>
-     <p class="lh-lg">*We will market our products and services honestly.</p>
-     <p class="lh-lg">*We will employ a professional, well trained and knowledgeable staff.</p>
-     <p class="lh-lg">*We will offer only products and services that meet your needs</p>
-     <p class="lh-lg">*We will provide clear explanations of all pricing and paperwork.</p>
-     <p class="lh-lg">*We will deliver your vehicle clean with a full explanation of features.</p>
-   <p class="fw-bold">New Arrivals </p>
-   <p class="lh-sm">For anyone looking for the latest and greatest car experience, our new electric inventory boasts an extensive selection of excellent models including... We offer exclusive savings for college graduates and CS majors.</p>
-     <p class="fw-bold">Used cars, Trucks, and SUVS </p>
-     <p class="lh-sm">If you're on a budget we have a lineup of used cars, from the average everyday hybrid to a luxury vehicle. They are quality-assured certified pre-owned models to satisfy all your needs. </p>
-    <p class="fw-bold"> </p>
- <p class="lh-sm"></p>
-    <p class="lh-lg"></p>
 
 {% endblock content %}
