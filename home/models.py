@@ -27,11 +27,21 @@ COLOR_CHOICES = {
     ("Silver", "Silver")
 }
 
+TYPE_CHOICES = {
+    ("SUV", "SUV"),
+    ("Compact", "Compact"),
+    ("Pick-up", "Pick-up"),
+    ("Sedan", "Sedan"),
+    ("Sports", "Sports"),
+    ("Coupe", "Coupe")
+}
+
 class Car(models.Model):
     # Fields
     name = models.CharField(max_length=20)
     make = models.CharField(max_length=20, choices=MAKE_CHOICES, default='make')
     model = models.CharField(max_length=20)
+    type = models.CharField(max_length=20, choices=TYPE_CHOICES, default='type', null=True)
     date_added = models.DateTimeField('date added')
     color = models.CharField(max_length=20, choices=COLOR_CHOICES, default='color')
     year = models.IntegerField(default=0)

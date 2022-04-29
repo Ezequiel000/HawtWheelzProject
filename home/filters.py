@@ -8,4 +8,4 @@ class CarFilter(django_filters.FilterSet):
      price_lt = django_filters.NumberFilter(field_name='price', lookup_expr='lt')
      class Meta:
          model = Car
-         fields = ['name', 'color', 'make', 'price']
+         fields = ['name', 'color', 'make', 'price', 'type']

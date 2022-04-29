@@ -24,8 +24,7 @@
         <div class="row row1 align-items-center" id="search-block">
             <form class="d-flex" method="get" action="{% url 'inventory' %}">
                 {% csrf_token %}
-                <label class="label">Name:</label>
-                {% render_field car_filter.form.name class="form-control" placeholder="Search" %}
+                {% render_field car_filter.form.name class="form-control" placeholder="Search Inventory" %}
                 <button class="btn btn-outline-secondary" type="submit">Search</button>
             </form>
         </div>
@@ -49,7 +48,11 @@
             {{ car_filter.form.price_lt.label_tag }}
             {% render_field car_filter.form.price_lt class="form-control" %}
         </div>
-        <button type="submit" class="btn btn-outline-secondary col-sm-2">
+            <div class="col-2">
+            {{ car_filter.form.type.label_tag }}
+            {% render_field car_filter.form.type class="form-control" %}
+        </div>
+        <button type="submit" class="btn btn-outline-secondary col-sm-1">
         <span class="glyphicon glyphicon-search"></span> Search
       </button>
     </div>
