@@ -1,5 +1,6 @@
 {% extends 'home/base.html'%}
 {% load static %}
+{% load widget_tweaks %}
 
 {% block content %}
     <style>
@@ -20,16 +21,42 @@
     </div>
     <div class="container-lg">
     <!--The first row will contain a search bar-->
-    <div class="row row1 align-items-center" id="search-block">
-     <div class="container-lg">
-      <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-     </div>
-    </div>
+        <div class="row row1 align-items-center" id="search-block">
+            <form class="d-flex" method="get" action="{% url 'inventory' %}">
+                {% csrf_token %}
+                {% render_field car_filter.form.name class="form-control" placeholder="Search Inventory" %}
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </form>
+        </div>
          <!--The second row will contain filter buttons-->
-
+        <form method="get" action="{% url 'inventory' %}">
+            {% csrf_token %}
+        <div class="row justify-content-evenly" id="filter-buttons">
+        <div class="col-2">
+            {{ car_filter.form.color.label_tag }}
+            {% render_field car_filter.form.color class="form-control" %}
+        </div>
+        <div class="col-2">
+            {{ car_filter.form.make.label_tag }}
+            {% render_field car_filter.form.make class="form-control" %}
+        </div>
+        <div class="col-2">
+            {{ car_filter.form.price_gt.label_tag }}
+            {% render_field car_filter.form.price_gt class="form-control" %}
+        </div>
+            <div class="col-2">
+            {{ car_filter.form.price_lt.label_tag }}
+            {% render_field car_filter.form.price_lt class="form-control" %}
+        </div>
+            <div class="col-2">
+            {{ car_filter.form.type.label_tag }}
+            {% render_field car_filter.form.type class="form-control" %}
+        </div>
+        <button type="submit" class="btn btn-outline-secondary col-sm-1">
+        <span class="glyphicon glyphicon-search"></span> Search
+      </button>
+    </div>
+          </form>
 
      <!--Card group added-->
      </div>
@@ -37,7 +64,7 @@
 
     <br>
        <div class="card-group">
-        {% for car in inventory_cars %}
+        {% for car in car_list %}
         {#  <div class="card" style="width: 18rem;"> #}
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <img src="{{ car.image.url }}" class="card-img-top" alt="...">
