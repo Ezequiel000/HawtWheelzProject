@@ -7,6 +7,9 @@
     .row1 {
     height: 100px;
     }
+    label {
+        color: #FFFFFF;
+    }
 
     </style>
     <div class = "card-img">
@@ -19,7 +22,7 @@
             <h3 style = "font-size: 50px; font-style: italic">Inventory</h3>
         </div>
     </div>
-    <div class="container-lg">
+    <div class="bg-dark">
     <!--The first row will contain a search bar-->
         <div class="row row1 align-items-center" id="search-block">
             <form class="d-flex" method="get" action="{% url 'inventory' %}">
@@ -33,19 +36,19 @@
             {% csrf_token %}
         <div class="row justify-content-evenly" id="filter-buttons">
         <div class="col-2">
-            {{ car_filter.form.color.label_tag }}
+            <label>Color:</label>
             {% render_field car_filter.form.color class="form-control" %}
         </div>
         <div class="col-2">
-            {{ car_filter.form.make.label_tag }}
+            <label>Make:</label>
             {% render_field car_filter.form.make class="form-control" %}
         </div>
         <div class="col-2">
-            {{ car_filter.form.price_gt.label_tag }}
+            <label>Price ></label>
             {% render_field car_filter.form.price_gt class="form-control" %}
         </div>
             <div class="col-2">
-            {{ car_filter.form.price_lt.label_tag }}
+            <label>Price <</label>
             {% render_field car_filter.form.price_lt class="form-control" %}
         </div>
             <div class="col-2">
@@ -55,9 +58,10 @@
         <button type="submit" class="btn btn-outline-secondary col-sm-1">
         <span class="glyphicon glyphicon-search"></span> Search
       </button>
+
     </div>
           </form>
-
+ <br>
      <!--Card group added-->
      </div>
      <br><br>
