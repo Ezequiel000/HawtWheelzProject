@@ -3,8 +3,10 @@ from .models import Car
 from .filters import CarFilter
 
 def homepage(request):
-    new_cars = Car.objects.order_by('-date_added')[:5]
-    data = {'new_cars': new_cars
+    new_cars = Car.objects.order_by('-date_added')[:6]
+    best_deal = Car.objects.order_by('price')[:6]
+    data = {'new_cars': new_cars,
+            'best_deal': best_deal
             }
 
     return render(request, 'home/index.html', data)
