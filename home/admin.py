@@ -1,4 +1,4 @@
-from .models import Car
+from .models import Car, Profile
 from django.contrib import admin
 from django.utils.html import format_html
 
@@ -16,3 +16,5 @@ class CarAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Car, CarAdmin)
+admin.site.register(Profile)
+

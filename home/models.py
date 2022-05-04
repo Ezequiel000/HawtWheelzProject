@@ -3,7 +3,7 @@ from django.db import models
 from django.utils.html import mark_safe
 from django.utils import timezone
 from django.urls import reverse
-from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import User
 
 
 class Car(models.Model):
@@ -20,7 +20,6 @@ class Car(models.Model):
     image2 = models.ImageField(upload_to='home/images', default='home/images/empty-default.jpg')
     image3 = models.ImageField(upload_to='home/images', default='home/images/empty-default.jpg')
     image4 = models.ImageField(upload_to='home/images', default='home/images/empty-default.jpg')
-
     price = models.IntegerField(default=0)
     description = models.CharField(max_length=500, default='des')
 
@@ -35,3 +34,11 @@ class Car(models.Model):
         return reverse('car_detail', kwargs={
             'car_id': self.id
         })
+
+
+class Profile(models.Model):
+    owner = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    wishlist = models.ManyToManyField(Car)
+
+    def __str__(self):
+        return f'{self.owner.email} Profile'

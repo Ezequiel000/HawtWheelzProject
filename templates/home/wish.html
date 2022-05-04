@@ -1,0 +1,102 @@
+{% extends 'home/base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <!--User-->
+<br><br>
+	<div class="container mx-auto">
+	    <div class="row">
+	    	<div class="col-sm-12 col-md-12 col-lg-3 pb-4">
+		    	<div class="card p-4">
+			    	<h4 class="card-title font-weight-bold text-center">Hello, {{ user.username|title }}</h4>
+			      	<hr>
+			    	<div class="card-text">
+			    		<p class="text-muted mb-0" style="font-size: 12px">Username:</p>
+			    		<p>{{ user.username }}</p>
+			    		<p class="text-muted mb-0" style="font-size: 12px">Name:</p>
+				  		<p>{{ user.first_name }} {{ user.last_name }}</p>
+				  		<p class="text-muted mb-0" style="font-size: 12px">Email:</p>
+				  		<p>{{ user.email }} </p>
+                        <div class="text-right">
+							<button type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#profileModal">Edit Profile</button>
+						</div>
+			        </div>
+		    	</div>
+		  	</div>
+		    <div class="col-sm-12 col-md-12 col-lg-9 pb-4">
+		    	<div class="row">
+		    		<div class="col-6 my-auto">
+		    			<h2 class="font-weight-bold pt-4">Wishlist</h2>
+		    		</div>
+                    <div class="col-6 my-auto text-right">
+		    			<button type="button" class="btn btn-primary font-weight-bold" style="border-radius: 50%" data-toggle="modal" data-target="#wishlistModal">+</button>
+		    		</div>
+		    	</div>
+		      	<br>
+		      	<div class="row">
+			      	{% for p in user.profile.wishlist.all %}
+				    	<div class="col-sm-12 col-md-6 col-lg-4 pb-4">
+			                <div class="h-100">
+			                	<img src="{{ p.car.image.url }}" class="card-img-top" alt="{{ p.car.name }}" style="width: auto; height: 225px; object-fit: scale-down;">
+			                	<div class="card-body">
+			                  		<h5 class="card-title">{{ p.car.name }}</h5>
+			                    	<p class="card-text text-muted" style="font-size:12px">{{ p.car.price }}</p>
+			                    	<a href="{{ p.affiliate_url }}" class="btn btn-warning">Buy now</a>
+			                	</div>
+			              	</div>
+			            </div>
+			    	{% endfor %}
+		        </div>
+		    </div>
+		</div>
+	</div>
+<!--User modal-->
+    <div class="modal fade" tabindex="-1" id="profileModal" role="dialog">
+	  	<div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      	<div class="modal-header">
+			        <h5 class="modal-title">Edit Profile</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+		        </div>
+		        <div class="modal-body">
+			        <form method="post">
+			          	{% csrf_token %}
+			          	{{ user_form|crispy }}
+		        </div>
+		      	<div class="modal-footer">
+		        		<button type="submit" class="btn btn-primary">Save changes</button>
+		        	</form>
+		        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        </div>
+		    </div>
+	  	</div>
+	</div>
+
+<!--Wishlist modal-->
+	<div class="modal fade" tabindex="-1" id="wishlistModal" role="dialog">
+		<div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      	<div class="modal-header">
+			        <h5 class="modal-title">Edit Profile</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+		      	</div>
+		      	<div class="modal-body">
+			        <form method="post">
+			        	{% csrf_token %}
+					  	{{ profile_form|crispy }}
+					  	<span class="text-muted" style="font-size:12px">Hold down "Control", or "Command" on a Mac, to select more than one.</span>
+		      	</div>
+		      	<div class="modal-footer">
+		        		<button type="submit" class="btn btn-primary">Save changes</button>
+		        	</form>
+		        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		      	</div>
+		    </div>
+	  	</div>
+
+
+{% endblock content %}
