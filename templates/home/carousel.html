@@ -1,0 +1,45 @@
+{% load static %}
+
+
+    <div class="container" style="background-color: black;width:75%;  padding-top: 30px">
+
+       <div id="indexCarousel" class="carousel carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#indexCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#indexCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#indexCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="{% static 'home/images/Carousel 2022-Hummer-EV.jpg' %}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.51)">
+                <h5>NEW!! 2022 HUMMER EV</h5>
+                <p>POWER THROUGH ANY OBSTACLE.</p>
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="{% static 'home/images/Carousel 2022-chevy-silverado-2500-hd.jpg' %}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.51)">
+                <h5>NEW!! 2022 CHEVROLET SILVERADO EV</h5>
+                <p>ALL AMERICAN WORK TRUCK.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'home/images/Carousel Porsche-EV.jpg' %}" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.51)">
+                <h5>NEW!! 2022 PORSCHE EV</h5>
+                <p>EXPERIENCE HYPER SPEED WITH THE NEW 2022 Porsche EV.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#indexCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#indexCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+       </div>
+    </div>
+
