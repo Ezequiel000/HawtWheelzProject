@@ -14,9 +14,7 @@ def homepage(request):
 
 def inventory(request):
     # this holds all cars in the database
-
     inventory_cars = Car.objects.all()
-
     context = {
         'inventory_cars': inventory_cars
     }
@@ -53,7 +51,7 @@ def user_profile(request):
             messages.success(request, 'Your wishlist was successfully updated!')
         else:
             messages.error(request, 'Unable to complete request')
-        return redirect("homepage:user_profile")
+        return redirect('user_profile')
 
     user_form = UserForm(instance=request.user)
     profile_form = ProfileForm(instance=request.user.profile)
