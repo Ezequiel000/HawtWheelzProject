@@ -6,9 +6,8 @@
         </header>
 </div>
 
-<div class="container-fluid" style="padding-left: 0;padding-right: 0">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-      <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
     <!--small logo on navbar-->
         <a class="navbar-brand p-1" href="#">
             <img src="{% static 'home/images/logo1.6.svg'%}"
@@ -23,7 +22,7 @@
                 aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collaspe navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-sm-0 nav-fill w-100">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}" >Home</a>
@@ -60,4 +59,4 @@
 {% endcomment %}
       </div>
     </nav>
-</div>
+
