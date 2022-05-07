@@ -2,18 +2,9 @@
 {% load static %}
 {% block content %}
 
-    {# Creates the card for the first image on the homepage#}
-        <img class="card-img" src = "{% static 'home/images/tesla-home-background.jpg' %}" style="width: 100%" alt="..."> {# image source #}
-        <div class = "card-img-overlay text-white text-center opacity-75"
-             style = "background-color: black; width: 100%; height: 30%; top: 130%; left: 50%;
-                      transform: translate(-50%,-50%)"> {# The text overlay for the image itself along with the text underneath #}
-            <h1 style = "font-size: 100px; font-style: italic">Hyper Wheelz</h1>
-            <h4>100'S OF NEW OFFERS: DRIVE AWAY IN YOUR DREAM CAR TODAY</h4>
-
-
-    </div>
-
-
+<div style="background-color: black">
+{% include 'home/carousel.html'  %}
+</div>
 
     <div class="container-fluid " style="background-color: black; height: auto; background-size: cover" > {# Creates the container to hold the card group together #}
         <br>
