@@ -2,21 +2,26 @@
 {% load static %}
 {% block content %}
 
-<div style="background-color: black">
+
 {% include 'home/carousel.html'  %}
-</div>
-
-    <div class="container-fluid " style="background-color: black; height: auto; background-size: cover" > {# Creates the container to hold the card group together #}
-        <br>
-        <h1 class="text-center text-white" style= "background-color: black;">NEW ARRIVALS</h1>
-        <h4 class="text-center text-white">AMAZING NEW CARS AT AMAZING PRICES!!!</h4>
-    <br>
 
 
-    <div class="card-group">  {# start of card group #}
+    <div class="container-fluid" style="
+background: rgb(0,0,0);
+background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(109,122,136,1) 100%);
+    height: auto; background-size: cover; overflow-x: hidden;position: relative" > {# Creates the container to hold the card group together #}
+       <br>
+        <h1 class="text-center text-white" style="font-style: oblique; font-family: fantasy; font-size: 85px">NEW ARRIVALS</h1>
+        <h4 class="text-center" style="font-family: 'Arial'; color: black"><b>AMAZING NEW CARS AT AMAZING PRICES!!!</b></h4>
+
+    <div class="container pt-5">
+<div class="row row-cols-1 row-cols-md-3 gy-3" style ="overflow-x: auto;">  {# start of card group, wanting to add scroll bar feature of cars here #}
   {% for car in new_cars %}  {# start of for loop to read all data in the database to print cards #}
-  <div class="card" style = "background-color: lightgrey">
+      <div class ="col">
+  <div class="card h-100 border border-2 border-dark shadow" style = "background: rgb(204, 209, 209); padding: 0px; height: 100%">
+  <a href ="{{ car.get_detail }}">
     <img class="card-img-top" src="{{ car.image.url }}" alt="...">
+  </a>
     <div class="card-body">
         <h5 class="card-title">{{ car.name }}</h5>
         <h4 class="card-text">{{ car.make }}</h4>
@@ -26,14 +31,38 @@
         <a href="#" class="card-link">Add to favorites </a>
     </div>
   </div>
-
-
+      </div>
 {% endfor %} {# end of for loop #}
     </div>
-    </div> {# closing both container and card group#}
+    </div>
+    {# closing both container and card group#}
+<br>
+    <div class ="container-fluid">
+<h1 class="text-center text-white" style="font-style: oblique; font-family: fantasy; font-size: 85px">BEST NEW DEALS!!!</h1>
 
+       <div class="container pt-5">
+<div class="row row-cols-1 row-cols-md-3 gy-3" style ="overflow-x: auto;">
+  {% for car in best_deal %}  {# start of for loop to read all data in the database to print cards #}
+      <div class ="col">
+  <div class="card h-100 border border-2 border-dark shadow" style = "background: rgb(204, 209, 209); padding: 0px; height: 100%">
+        <a href ="{{ car.get_detail }}">
+    <img class="card-img-top" src="{{ car.image.url }}" alt="...">
+        </a>
+    <div class="card-body">
+        <h5 class="card-title">{{ car.name }}</h5>
+        <h4 class="card-text">{{ car.make }}</h4>
+        <h3 class="card-text">$ {{ car.price }}</h3>
+        <a href="{{ car.get_detail }}" class="card-link">See Details</a>
+        <br>
+        <a href="#" class="card-link">Add to favorites </a>
+    </div>
+  </div>
+      </div>
+{% endfor %} {# end of for loop #}
+     </div>
+    </div>
+    </div>
+    </div>
     <img src="{% static 'home/images/bg.jpg' %}" width ="100%" alt="..." style = "background-attachment: fixed;
     background-position: center; background-repeat: no-repeat; background-size: cover"> {# image at the bottom so when you scroll it moves #}
-
 {% endblock content %}
-

@@ -1,2 +1,148 @@
 {% extends 'home/base.html' %}
 {% load static %}
+{% block content %}
+
+  <div class="container-fluid" style ="background: radial-gradient(circle, rgba(111,126,133,1) 0%, rgba(13,17,22,1) 100%);
+   background-size: cover; overflow-x: hidden;position: relative; ">
+    <div class="row justify-content-center">
+      <div class="text-center">
+
+
+             <h1 class ="text-white display-1">About Us</h1>
+          <p class="fw-bold text-white-50 lead" style="font-size: x-large">
+              Amidst a panoramic, HyperWheelz was founded by Ezequiel Hernandez in 2022.
+              It all started when Professor Jennifer Jin assigned the engineers to group four on one fateful day. </p>
+      <p class="lh-1 text-white lead" style="font-size: larger">One man's vision to create the best car dealership with the fairest prices for electric cars.
+          Along the way they utilized the lessons that they learned from CSE 4550. They built a business using team management,
+          hard work, and first-hand experience with html, css, django, and GitHub. It was quite a journey for these engineers.
+          HyperWheelz will become a household name for all CSUSB students as gas prices raise and students go broke. Electric
+          cars will be the car the future. By Spring 2022 we hope to provide the best user experience in the city of San Bernardino. </p>
+
+      </div>
+    </div>
+
+        <div class ="container-fluid" style="background-color: grey; width: 100%">
+            <div class = "row">
+                <div class = "col-xl-6 col-lg-6 col-md-6">
+        <img src = "../../static/home/images/dealer.jpg" alt ="..." style ="width: 106%; height: 100%; margin-left: -10px">
+                </div>
+                <div class = "col-xl-6 col-lg-6 col-md-6" style = "padding-left: 20px">
+    <h1 class ="text-center text-black-50 display-2">Background</h1>
+<h6 class="fw-bold text-center text-white display-6"> Why choose us? </h6>
+            <div class ="text-white" style="font-size: larger">
+   <p class=" text-center lead">We offer the best deals on electric cars along with student discounts for coyote students.
+       GO COYOTES! Since gas cost an arm and a leg these days, electric cars will be more cost-efficient. According to Feilding Cage,
+       The long road to electric cars, “Less than 1% of the 250 million cars, SUVs and light-duty trucks on the road in the
+       United States are electric.” Looking at the IHS Markit industry analysis of 45% of cars sales could be electric by 2035.
+       Our company is 13 years ahead of everyone else.</p>
+                <br>
+                <div style ="text-align: center">
+                    <div class ="lead">
+<p class="lh-1">-We have one semester of experience</p>
+    <p class="lh-1">-Award-winning service </p>
+    <p class="lh-1">-No hidden cost</p>
+    <p class="lh-1">-Different make, model, and prices </p>
+                    </div>
+            </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+        <br>
+
+         <div class="container-fluid" style ="background: gray">
+            <div class ="row">
+                <div class = "col-xl-6 col-lg-6 col-md-6 align-content-center">
+                    <h1 class="text-center text-black-50 display-2"> Features</h1>
+      <div class ="text-white" style ="text-align: center; font-size: large">
+            <p class="lh-1 lead">- Can be used on mobile and any web browser</p>
+      <p class="lh-1 lead">- Create an account</p>
+      <p class="lh-1 lead">- Login page</p>
+    <p class="lh-1 lead">- Favorites and Details page</p>
+    <h1 class="text-center text-black-50 display-2"> HyperWheelz Mission </h1>
+              <div class ="text-white" style ="text-align: center; font-size: large">
+    <p class="lh-lg lead">*We will respect your time.</p>
+     <p class="lh-lg lead">*We will market our products and services honestly.</p>
+     <p class="lh-lg lead">*We will employ a professional, well-trained and knowledgeable staff.</p>
+     <p class="lh-lg lead">*We will offer only products and services that meet your needs</p>
+     <p class="lh-lg lead">*We will provide clear explanations of all pricing and paperwork.</p>
+     <p class="lh-lg lead">*We will deliver your vehicle clean with a full explanation of features.</p>
+                </div>
+      </div>
+                </div>
+                    <div class = "col-xl-6 col-lg-6 col-md-6">
+          <img src = "../../static/home/images/store.jpg" alt ="..."
+             style = "width: 107%; height: 100%; margin-left: -13px">
+      </div>
+        </div>
+        </div>
+      <div style ="font-size: large">
+        <p class="fw-bold text-center text-black display-3">New Arrivals </p>
+   <p class="lh-sm text-center text-white lead mb-0" style="font-size: x-large">For anyone looking for the latest and greatest car experience, our new electric
+       inventory boasts an extensive selection of excellent models including... We offer exclusive savings for college graduates
+       and CS majors.</p>
+     <p class="fw-bold text-center text-black display-3">Used cars, Trucks, and SUVS </p>
+     <p class="lh-sm text-center text-white lead" style="font-size: x-large">If you're on a budget we have a lineup of used cars, from the average everyday
+         hybrid to a luxury vehicle. They are quality-assured certified pre-owned models to satisfy all your needs. </p>
+    <p class="fw-bold"> </p>
+ <p class="lh-sm"></p>
+    <p class="lh-lg"></p>
+      </div>
+  </div>
+    <br>
+    <h1 class ="text-center" style =""><b>FAQs?</b></h1>
+<div class="accordion " id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Why choose Hyper Wheelz?
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+          We as a dealership decided to be different from other car dealerships by focusing primarily on electric vehicles
+          which have become the latest trend in transportation.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+       Why choose to sell only electric vehicles?
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+    At Hyper Wheelz we decided to focus on electric cars to lower car emissions from gas powered vehicles. As we try to lower
+          as much car emission as possible by switching over to the clean power of electricity.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Can I charge my vehicle at home?
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+    Yes, what's so convenient about electric cars is you can simply plug them in back home and let it charge. No longer having the hassle of
+          driving to a nearby gas station anymore.
+      </div>
+    </div>
+  </div>
+<div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        Is there new vehicles being added?
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+    Yes, our dealership is always adding new vehicles, so you can shop your favorite models at low prices you can afford.
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
