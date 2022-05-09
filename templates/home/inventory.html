@@ -62,27 +62,46 @@
      <br><br>
 
     <br>
-       <div class="card-group" style="background: rgb(204, 209, 209)">
-        {% for car in car_list %}
-        {#  <div class="card" style="width: 18rem;"> #}
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <img src="{{ car.image.url }}" class="card-img-top" alt="...">
-            <div class="card-body">
-           <h5 class="card-title">{{ car.name }}</h5>
-           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">{{ car.price }} $</li>
-        <li class="list-group-item">{{ car.model }}</li>
-        <li class="list-group-item">{{ car.make }}</li>
+
+
+
+     <div class="container">
+<div class="row row-cols-1 row-cols-md-3 gy-3" style ="overflow-x: auto;">
+  {% for car in car_list %}  {# start of for loop to read all data in the database to print cards #}
+      <div class ="col">
+  <div class="card h-100 border border-2 border-dark shadow" style = "background: rgb(204, 209, 209); padding: 0px; height: 100%">
+        <a href ="{{ car.get_detail }}">
+    <img class="card-img-top" src="{{ car.image.url }}" alt="..." style ="height: 14rem">
+        </a>
+      <h5 class="card-title">{{ car.name }}</h5>
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item" style="background: rgb(204, 209, 209)">$ {{ car.price }} </li>
+        <li class="list-group-item" style = "background: rgb(204, 209, 209)">{{ car.model }}</li>
+        <li class="list-group-item" style ="background: rgb(204, 209, 209)">{{ car.make }}</li>
         </ul>
-        <div class="card-body">
-       <a href="{{ car.get_detail }}" class="card-link">See Details</a>
-        <a href="#" class="card-link">Add to favorites</a>
-         </div>
-        </div>
-         {% endfor  %}
-       </div>
+        <a href="{{ car.get_detail }}" class="card-link">See Details</a>
+        <br>
+        <a href="#" class="card-link">Add to favorites </a>
+    </div>
+  </div>
+      </div>
+{% endfor %} {# end of for loop #}
+     </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
  <!--Card group ended-->
 
     </div>
