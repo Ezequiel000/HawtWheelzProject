@@ -7,7 +7,9 @@ from home import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
-    path('<int:car_id>', views.car_detail, name="car_detail")
+    path('members/', include('django.contrib.auth.urls')),
+    path('members/', include('members.urls')),
+
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -80,25 +80,26 @@
           </div>
       </div>
       <div class="modal-body">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-              <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#in" type="button" role="tab" aria-controls="home" aria-selected="true">Sign In </button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#up" type="button" role="tab" aria-controls="profile" aria-selected="false">Sign Up</button>
-              </li>
-
-            </ul>
-            <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade show active" id="in" role="tabpanel" aria-labelledby="home-tab">...</div>
-              <div class="tab-pane fade" id="up" role="tabpanel" aria-labelledby="profile-tab">...</div>
-
+        <div class=" row">
+           <div class = "row justify-content-center">
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+           </div>
+            <div class ="row-cols-1">
+               <button type="button" class="btn btn-primary">Login   </button>
             </div>
+              <div class = "row-cols-1">
+               <button type="button" href="{% url 'register' %}" class="btn btn-primary">Register</button>
+            </div>
+
+        </div>
+
+
+
+
+
       </div>
       <div class="modal-footer">
-          <div class="g-signin2" data-onsuccess="onSignIn"></div>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+
       </div>
     </div>
   </div>
