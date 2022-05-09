@@ -7,7 +7,10 @@ from home import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
+    # path('members/', include('django.contrib.auth.urls')),
+    path('accounts/', include('allauth.urls')),
     path('members/', include('members.urls')),
+
 
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

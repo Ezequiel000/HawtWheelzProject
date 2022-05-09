@@ -69,7 +69,19 @@
         <p class="card-text">{{ cars.color }}</p>
           <h2 class="card-title">Description:</h2>
         <p class="card-text">{{ cars.description }}</p>
-          <a href="#" class="btn btn-primary">Add to Favorites</a>
+         {% if user.is_authenticated %}
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" value="{{self.id}}" name="product_pk">
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-outline-secondary" >Add to Favorites</button>
+                        </div>
+                    </form>
+               {% else %}
+             <div class="col-md-12 text-center">
+                     <a href="/login" class="btn btn-outline-secondary" >Add to Favorites</a>
+             </div>
+        {% endif %}
         <p class="card-text"><small class="text-muted">Vehicle became available on {{ cars.date_added }}</small></p>
       </div>
     </div>
