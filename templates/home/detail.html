@@ -2,14 +2,13 @@
 {% load static %}
 {% block content %}
 
-    <div class = "card-img">
+    <div class = "carousel">
         <img src="{% static 'home/images/wheel1.png' %}" width ="100%" height="400px" alt="..." style = "background-attachment: fixed;
         background-position: center;background-size: cover">
 
-        <div class = "card-img-overlay text-white text-center opacity-75"
-             style = "background-color: black; width: 100%; height: 15%; top: 66%; left: 50%;
-                      transform: translate(-50%,-50%)"> {# The text overlay for the image itself along with the text underneath #}
-            <h3 style = "font-size: 50px; font-style: italic">Specs</h3>
+        <div class = "container-fluid text-white text-center opacity-50"
+             style = "background-color: black; width: 100%; position: absolute; bottom: 0;left: 0;right: 0"> {# The text overlay for the image itself along with the text underneath #}
+            <h3 style = " font-style: italic;text-align: left" class ="display-1">Specs</h3>
         </div>
     </div>
 
