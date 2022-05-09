@@ -7,18 +7,22 @@
     .row1 {
     height: 100px;
     }
+    label {
+        color: #FFFFFF;
+    }
 
     </style>
     <div class = "carousel">
         <img src="{% static 'home/images/wheel1.png' %}" width ="100%" height="400px" alt="..." style = "background-attachment: fixed;
         background-position: center;background-size: cover">
-
+      
         <div class = "container-fluid text-white text-center opacity-50"
              style = "background-color: black; left: 0; bottom: 0;right: 0; position: absolute"> {# The text overlay for the image itself along with the text underneath #}
             <h3 style = " font-style: italic" class ="display-1">Inventory</h3>
+
         </div>
     </div>
-    <div class="container-lg">
+    <div class="bg-dark">
     <!--The first row will contain a search bar-->
         <div class="row row1 align-items-center" id="search-block">
             <form class="d-flex" method="get" action="{% url 'inventory' %}">
@@ -32,19 +36,19 @@
             {% csrf_token %}
         <div class="row justify-content-evenly" id="filter-buttons">
         <div class="col-2">
-            {{ car_filter.form.color.label_tag }}
+            <label>Color:</label>
             {% render_field car_filter.form.color class="form-control" %}
         </div>
         <div class="col-2">
-            {{ car_filter.form.make.label_tag }}
+            <label>Make:</label>
             {% render_field car_filter.form.make class="form-control" %}
         </div>
         <div class="col-2">
-            {{ car_filter.form.price_gt.label_tag }}
+            <label>Price ></label>
             {% render_field car_filter.form.price_gt class="form-control" %}
         </div>
             <div class="col-2">
-            {{ car_filter.form.price_lt.label_tag }}
+            <label>Price <</label>
             {% render_field car_filter.form.price_lt class="form-control" %}
         </div>
             <div class="col-2">
@@ -54,9 +58,10 @@
         <button type="submit" class="btn btn-outline-secondary col-sm-1">
         <span class="glyphicon glyphicon-search"></span> Search
       </button>
+
     </div>
           </form>
-
+ <br>
      <!--Card group added-->
      </div>
      <br><br>

@@ -27,6 +27,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'members',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'django_filters',
     'widget_tweaks'
     # 'home.apps.HomeConfig', I commented this out and used 'home' instead
