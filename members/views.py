@@ -1,7 +1,7 @@
 # Source: https://ordinarycoders.com/blog/article/django-user-register-login-logout
 from django.shortcuts import render, redirect
-from .forms import NewUserForm, UserForm, ProfileForm #import UserForm and ProfileForm
-from django.contrib.auth import login, authenticate
+from .forms import NewUserForm, UserForm, ProfileForm  # import UserForm and ProfileForm
+from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 
@@ -27,7 +27,7 @@ def login_request(request):
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
             if user is not None:
-                login(request, user)
+                login(request, user, backend='django.contrib.auth.backends.ModelBackend')
                 messages.info(request, f"You are now logged in as {username}.")
                 return redirect("members:user_profile")
             else:
@@ -50,7 +50,7 @@ def user_profile(request):
             messages.success(request, 'Your wishlist was successfully updated!')
         else:
             messages.error(request, 'Unable to complete request')
-        return redirect('user_profile')
+        return redirect('members:user_profile')
 
     user_form = UserForm(instance=request.user)
     profile_form = ProfileForm(instance=request.user.profile)
@@ -58,3 +58,9 @@ def user_profile(request):
     context = {"user": request.user, "user_form": user_form, "profile_form": profile_form}
 
     return render(request, 'members/wish.html', context)
+
+
+def logout_request(request):
+    logout(request)
+    messages.info(request, "You have successfully logged out.")
+    return redirect("homepage")

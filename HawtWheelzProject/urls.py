@@ -6,10 +6,18 @@ from home import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('home.urls')),
-    # path('members/', include('django.contrib.auth.urls')),
     path('accounts/', include('allauth.urls')),
     path('members/', include('members.urls')),
+    path('members/', include('django.contrib.auth.urls')),
+    path('', include('home.urls')),
+
+
+
+
+
+
+
+
 
 
 ]

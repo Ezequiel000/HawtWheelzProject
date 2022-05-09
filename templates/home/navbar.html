@@ -83,17 +83,25 @@
       </div>
       <div class="modal-body">
         <div class=" row">
-           <div class = "row justify-content-center">
+{% if user.is_authenticated %}
 
-           </div>
+      <li class="nav-item">
+        <a class="nav-link" href="/members/log-out">Logout</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Welcome, {{user.username}}</a>
+      </li>
+      {% else %}
+            <div class ="d-grid gap-2">
+                <div class="col-md-12 text-center">
+                     <a href="{% url 'members:login' %}" class="btn btn-outline-secondary" >Login</a>
+                </div>
+                <div class="col-md-12 text-center">
+                     <a href="{% url 'members:register' %}" class="btn btn-outline-secondary" >Register</a>
+                </div>
 
-            <div class ="row-cols-1">
-               <button type="button" class="btn btn-primary">Login   </button>
             </div>
-              <div class = "row-cols-1">
-               <button type="button" href="{% url 'members:register' %}" class="btn btn-primary">Register</button>
-            </div>
-
+        {% endif %}
         </div>
 
 
